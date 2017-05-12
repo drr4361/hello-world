@@ -1,22 +1,76 @@
-size(600, 600);
+void setup() 
+{
+  size(600, 600);
+  smooth();
+}
+  void draw() 
+{
+int movex = 100;
+int movey = 100;
 
-// body
-fill(0, 255, 44);
-quad(250, 200, 350,200, 370, 400, 220, 400);
+ {
+   if (keyPressed && (key == CODED))  
+   if (keyCode == UP) { 
+   movey--;
+ }
+   else if (keyCode == DOWN) 
+   movey++;
+  }
+  
+ {
+   if (keyPressed && (key == CODED)) { 
+   if (keyCode == LEFT) { 
+   movex--;
+ }
+   else if (keyCode == RIGHT) { 
+   movex++;
+   
+ }
+ }
+  } 
+  
+  // body
+   if (key == CODED) 
+  
+    if (keyPressed)
+    fill(0);
+  
+  else 
+    fill(3, 255, 29);
+  
 
-// head
-fill(255, 0, 0);
-ellipse(300, 200, 100, 100);
+    background(204);
 
-// eyes
-fill(69,69,69);
-ellipse(270, 180, 10,10);
-ellipse(330,180, 10,10);
+  quad(250 + movex, 200 + movey, 350 + movex,200 + movey, 370 + movex, 400 + movey, 220 + movex, 400 + movey);
 
-// mouth
-line(270, 210, 320, 210);
-arc(320, 210, 10, 10, PI-PI, PI);
+  // head
+  
+  if (keyPressed && (key == CODED)) 
+  {
+    if (keyCode == 'b');
+    fill(255, 214, 64);
+  } 
+  else 
+  {
+    fill(255, 0, 0);
+  }
+  ellipse(300 + movex, 200 + movey, 100, 100);
+  
+  // eyes
+  fill(69,69,69);
+  ellipse(270 + movex, 180 + movey, 10,10);
+  ellipse(330 + movex,180 + movey, 10,10);
+  // need to make it follow
+  fill(255, 255, 255);
+  ellipse( 270 + movex, 180 + movey , 4, 4);
+  ellipse(330 + movex, 180 + movey , 4, 4);
 
-// legs
-quad(320,400 , 360,400 , 360, 420 , 320, 420);
-quad(230,400 , 270,400 , 270, 420 , 230, 420);
+  // mouth
+  fill(69,69,69);
+  line(270 + movex, 210 + movey, 320 + movex, 210 + movey);
+  arc(320 + movex, 210 + movey, 10, 10, PI-PI, PI);
+
+  // legs
+  quad(320 + movex, 400 + movey , 360 + movex, 400 + movey , 360 + movex, 420 + movey , 320 + movex, 420 + movey);
+  quad(230 + movex, 400 + movey , 270 + movex, 400 + movey , 270 + movex, 420 + movey , 230 + movex, 420 + movey);
+}
